@@ -1,0 +1,51 @@
+{{#partial "contnet"}}
+    <section class="">
+        <div class="squad">
+            <h3>Choose Squad Members</h3>
+            {{#each heroes}}
+            <div class="heroes">
+                <div class="each">
+                    <p>Name:{{name}}</p>
+                    <p>Super power: {{power}}</p>
+                    <a class="btns" href="/squad/new">Add to Squad</a>
+                </div>
+            </div>
+
+            {{/each}}
+        </div>
+        <h2>
+            <a class="btns" href="/squadform">Create Your Squad</a>
+            <br><br>
+            {{#if squads}}
+                LIST OF SQUADS
+        </h2>
+               {{#each squads}}
+                   <div class="details col-md-6">
+                       <div>
+                           <h3>{{squadName}}</h3>
+                           <p>Id:{{squadId}}</p>
+                           <p>Purpose:{{squadCause}}</p>
+                           <p>Max participants:{{squadSize}}</p>
+                           <br><br>
+                           <h3>MEMBERS</h3>
+                           <a class="btns" href="/new/member/{{squadId}}">Bind Id</a>
+                           <button class="btns add-btn" href="/squad">Add New Member</button>
+                          {{#each squadHeroes}}
+                              <div class="member-cont">
+                                  <p>Name:{{this.name}}</p>
+                                  <p>Power:{{power}}</p>
+                                  <button class="btns">Remove</button>
+                              </div>
+                          {{/each}}
+                       </div>
+
+                   </div>
+               {{/each}}
+
+            {{else}}
+                <P>Please, create a squad to continue</P>
+
+            {{/if}}
+
+    </section>
+{{/partial}}
