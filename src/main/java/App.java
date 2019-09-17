@@ -37,9 +37,9 @@ public class App {
             return new ModelAndView(model,"home.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/hero-form",(req,res)->{
+        get("/hero-f",(req,res)->{
             Map<String,Object>model = new HashMap<>();
-            return new ModelAndView(model,"heroForm.hbs");
+            return new ModelAndView(model,"heroform.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/hero",(req,res)->{
@@ -49,9 +49,9 @@ public class App {
             return new ModelAndView(model,"hero.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/squad-form",(req,res)->{
+        get("/squadform",(req,res)->{
             Map<String,Object>model = new HashMap<>();
-            return new ModelAndView(model,"squadForm.hbs");
+            return new ModelAndView(model,"squadform.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/squad",(req,res)->{

@@ -1,7 +1,7 @@
 {{#partial "content"}}
 
     <div class="card">
-        <form class="form" action="/new/hero" method="post">
+        <form class="form" action="/squad/new" method="post">
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">Squad's name</label>
                 <div class="col-sm-10">
@@ -10,20 +10,18 @@
             </div>
 
             <div class="form-group row">
-                <label for="size" class="col-sm-2 col-form-label">Hero's size</label>
+                <label for="size" class="col-sm-2 col-form-label">Squad's size</label>
                 <div class="col-sm-10">
                     <input type="number" class="form-control" id="size" placeholder="Enter max number for squad number">
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="purpose" class="col-sm-2 col-form-label">Hero's power</label>
+                <label for="purpose" class="col-sm-2 col-form-label">Squad's purpose</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="purpose" placeholder="Enter purpose of squad">
                 </div>
             </div>
-
-
             <input clas="btns" type="submit">
         </form>
 
