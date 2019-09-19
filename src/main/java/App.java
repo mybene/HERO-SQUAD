@@ -89,7 +89,7 @@ public class App {
         return new ModelAndView(model,"success.hbs");
         },new HandlebarsTemplateEngine());
 
-        get("/new/member/;squadId",(req,res)->{
+        get("/new/hero/:squadId",(req,res)->{
             Map<String, Object>model= new HashMap<>();
             req.session().attribute("selectedSquad",req.params("squadId"));
             model.put("selectedSquad",req.session().attribute("selectedSquad"));
