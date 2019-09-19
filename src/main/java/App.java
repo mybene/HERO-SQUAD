@@ -6,7 +6,7 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+//import java.util.List;
 import java.util.Map;
 import static spark.Spark.*;
 public class App {
@@ -44,7 +44,7 @@ public class App {
 
         get("/hero",(req,res)->{
             Map<String,Object>model = new HashMap<>();
-            List<Hero> newHero=Hero.getInstances();
+            ArrayList<Hero> newHero=Hero.getInstances();
             model.put("heroes",newHero);
             return new ModelAndView(model,"hero.hbs");
         }, new HandlebarsTemplateEngine());

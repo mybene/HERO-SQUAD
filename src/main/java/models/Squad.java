@@ -48,7 +48,7 @@ public class Squad {
         instances.clear();
     }
 
-    public int getId() {
+    public int getSId() {
         return squadId;
     }
     public static List<Squad> getInstances(){
@@ -82,7 +82,7 @@ public class Squad {
         addHero().clear();
     }
 
-    public void setNewHero(Hero newHero) {
+    public void setNewHero(models.Hero newHero) {
         squadHeroes.add(newHero);
 
     }
