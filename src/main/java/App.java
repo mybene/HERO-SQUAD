@@ -56,11 +56,11 @@ public class App {
 
         get("/squad",(req,res)->{
             Map<String,Object>model = new HashMap<>();
-            List<Squad> newSquad= Squad.getInstances();
+            ArrayList<Squad> newSquad= Squad.getInstances();
             model.put("squad",newSquad);
-            List<Hero> members=Hero.getInstances();
+            ArrayList<Hero> members=Hero.getInstances();
             model.put("heroes",members);
-            Squad squad = Squad.gotNewSquad();
+            Squad squad = Squad.findSquadId(1);
             model.put("allSquadMemebrs",squad.getSnames());
             return  new ModelAndView(model,"squad.hbs");
         }, new HandlebarsTemplateEngine());
@@ -68,12 +68,25 @@ public class App {
         post("/squad/new",(req,res)->{
             Map<String,Object>model = new HashMap<>();
             String squadName = req.queryParams("squadName");
-            Integer squadSize = Integer.parseInt(req.queryParams("squadSize"));
-            String squadCause= req.queryParams("squadCause");
+            Integer squadSize = Integer.parseInt(req.queryParams("size"));
+            String squadCause= req.queryParams("cause");
             Squad newSquad = new Squad(squadName,squadSize,squadCause);
             req.session().attribute("item",squadName);
             model.put("item",req.session().attribute("item"));
             return new ModelAndView(model,"success.hbs");
+        },new HandlebarsTemplateEngine());
+
+        post("/new/hero",(req,res)->{
+            Map<String,Object>model= new HashMap<>();
+            String name=req.queryParams("Iname");
+            Integer age= Integer.parseInt(req.queryParams("Iage"));
+            String power= req.queryParams("Ipower");
+            String weakness= req.queryParams("Iweakness");
+        Hero newHero= new Hero(name,age,power,weakness);
+        req.session().attribute("item",name);
+        model.put("item",req.session().attribute("item"));
+        model.put("newHero",newHero);
+        return new ModelAndView(model,"success.hbs");
         },new HandlebarsTemplateEngine());
 
         get("/new/member/;squadId",(req,res)->{
@@ -94,7 +107,6 @@ public class App {
             model.put("newHero",newSquad.getSnames());
             return new ModelAndView(model,"success.hbs");
         },new HandlebarsTemplateEngine());
-
 
     }
 

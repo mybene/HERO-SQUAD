@@ -2,8 +2,6 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 public class Squad {
 
@@ -51,7 +49,7 @@ public class Squad {
     public int getSId() {
         return squadId;
     }
-    public static List<Squad> getInstances(){
+    public static ArrayList<Squad> getInstances(){
         return instances;
     }
 
