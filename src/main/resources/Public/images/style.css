@@ -1,0 +1,59 @@
+#inputHero{
+background-image:url('images/heroForm.jpg');
+background-size:cover;
+color:white;
+font-size:18px;
+border:2px red solid;
+}
+
+#inputSquad{
+background-image:url('images/squad.jpeg');
+background-size:cover;
+color:white;
+font-size:18px;
+border:2px silver solid;
+}
+
+a{
+text-decoration:none;
+display:inline-block;
+color:inherit;
+}
+
+btns{
+border:none;
+cursor:pointer;
+outline:none;
+padding:5px 20px;
+font-size:1.53em;
+border-radius:20px;
+background-color:green
+}
+
+body{
+background-image:url('images/home.jpg');
+background-size:cover;
+}
+
+form{
+position:relative;
+z-index:3;
+margin:20px;
+}
+
+label{
+color:blue;
+font-weight:bold;
+}
+
+::placeholder{
+color:rgb(124,122,122);
+}
+
+@media only screen and (max-width:700px){
+images{
+width:100%;
+  }
+}
+
+

@@ -2,19 +2,16 @@ package models;
 
 
 import java.util.ArrayList;
-import java.util.List;
+//import java.util.List;
 
 public class Hero {
-
 
     private static String  Iname;
     private static  int Iage;
     private  static String Ipower;
     private static  String Iweakness;
     private  static  int id;
-    private  static List<Hero> instances=new ArrayList<>();
-
-
+    private  static ArrayList<Hero> instances=new ArrayList<>();
 
     public Hero(String name, int age, String power, String weakness) {
         this.Iname = name;
@@ -26,19 +23,23 @@ public class Hero {
     }
 
     public static void clear() {
+
         instances.clear();
     }
 
     public String getName() {
+
         return Iname;
     }
 
     public int getAge() {
+
         return Iage;
     }
 
 
     public static String getPower() {
+
         return Ipower;
     }
 
@@ -46,15 +47,13 @@ public class Hero {
         return Iweakness;
     }
 
-    public static List<Hero> getInstances() {
+    public static ArrayList<Hero> getInstances() {
+
         return instances;
     }
 
-//   public  void clearAllHeroes(){
-//        instances.clear();
-//   }
-
     public static Hero find(int id) {
+
         return instances.get(id -1);
     }
 
